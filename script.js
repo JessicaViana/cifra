@@ -1,39 +1,52 @@
-//todo  1. função de criptografia da Cifra de Vigenère em Javascript
+// Função de Criptografia da Cifra de Vigenère em Javascript:
+let message = "qoesz aruleyc";
+let key = "jasontodd";
 
-// let name = prompt("Please enter your name:");
-// console.log("Hello, " + name + "!");
-// var msg = prompt("mensagem:");
-let msg = "homem morcego        ";
-let key = "      jasontodd";
-
-function cripto(msg, key) {
+function encryption(message, key) {
   key = key.toLowerCase().trim();
-  msg = msg.toLowerCase().trim();
-  let cripto = "";
+  message = message.toLowerCase().trim();
+  let encryption = "";
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  for (i in msg) {
+  for (i in message) {
     //validações
-    for (let i = 0; key.length < msg.length; i++) {
+    for (let i = 0; key.length < message.length; i++) {
       key = key.concat(key[i]);
     }
-    if (msg[i] == " ") {
-      cripto += " ";
+    if (message[i] == " ") {
+      encryption += " ";
     } else {
       nKey = alphabet.indexOf(key[i]);
-      nMsg = alphabet.indexOf(msg[i]);
-      nCripto = nMsg + nKey;
-      if (nCripto >= 26) nCripto -= 26;
-      cripto += alphabet[nCripto];
+      nMessage = alphabet.indexOf(message[i]);
+      nencryption = nMessage + nKey;
+      if (nencryption >= 26) nencryption -= 26;
+      encryption += alphabet[nencryption];
     }
-
-    // console.log("CHAVE = " + key);
-    // console.log("i = " + i);
-    // console.log(`nKey =  ${key[i]} --> ${nKey}`);
-    // console.log(`nMsg =  ${msg[i]} -->  ${nMsg}`);
-    // console.log("nCripto = " + nCripto);
-    // console.log("CRIPTO =  " + cripto.toUpperCase());
-    // console.log("-------------");
   }
-  return cripto;
+  return encryption;
 }
+
+//Função de Envio da Mensagem Criptografada para a API:
+
+async function decryptionAPI(message, key) {
+  let options = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify({
+      encrypted_message: message,
+      keyword: key,
+    }),
+  };
+
+  const response = await fetch(
+    "https://desafio9.onrender.com/decrypt_message",
+    options
+  )
+    .then((res) => res.json())
+    .catch((error) => console.error("Erro:", error))
+    .then(console.log);
+}
+
+decryptionAPI(message, key);

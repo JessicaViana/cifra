@@ -3,8 +3,10 @@
     font-family: "Caprasimo", serif;
     font-style: normal;
     --color-gray: #4E5D70;
-    --color-lilac: #FBF2D2;
-    background-color: var(--color-lilac);
+    --color-yellow: #FBF2D2;
+    --color-pink: #F798BA;
+    --color-lilac: #CAA4F7;
+    background-color: var(--color-yellow);
     color: var(--color-gray);
 
 }
@@ -12,9 +14,9 @@
 body {
     justify-content: center;
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     height: 100vh;
-    margin: 0 60rem;
+    margin: 0 30rem;
 
 
 }
@@ -34,7 +36,6 @@ h2 {
 .headline {
     display: flex;
     flex-direction: column;
-    /* gap: 14rem; */
     max-width: min-content;
     align-items: start;
     justify-content: start;
@@ -46,10 +47,11 @@ h2 {
     background-color: var(--color-gray);
     padding: 45rem;
     display: flex;
-    /* gap: 18rem; */
-    margin: 200rem;
     align-items: center;
     min-width: 100% 1400rem;
+    max-height: 500rem;
+    margin-left: 350rem;
+
 }
 
 .area-container .first {
@@ -75,11 +77,46 @@ h2 {
     transform: translateX(-50%);
 }
 
-
 .second .slot {
     display: flex;
     align-items: center;
 
+}
+
+.area-buttons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 1%;
+    bottom: 17%;
+    gap: 5rem;
+}
+
+button {
+    border-radius: 22rem;
+    padding: 13rem 24rem;
+    font-family: "Caprasimo", serif;
+    color: #fff;
+    border: 0;
+    margin: 6rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#encryption {
+    background-color: var(--color-pink);
+}
+
+#decryption {
+    background-color: var(--color-lilac);
+}
+
+#encryption:hover {
+    box-shadow: rgba(231, 91, 180, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px
+}
+
+#decryption:hover {
+    box-shadow: rgba(160, 97, 211, 0.4) 0px 5px, rgba(201, 46, 240, 0.3) 0px 10px, rgba(207, 92, 230, 0.2) 0px 15px
 }
 
 
@@ -132,7 +169,7 @@ h2 {
 
 
 .result {
-    background-color: #F798BA;
+    background-color: var(--color-pink);
 }
 
 
@@ -147,7 +184,7 @@ textarea {
     border: none;
     font-family: "Bree Serif", serif;
     font-size: large;
-    color: #4E5D70;
+    color: var(--color-gray);
 }
 
 .key textarea {

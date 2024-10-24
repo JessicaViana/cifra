@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>C</title>
+    <title>Cifra de Vigenère</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/encrypted.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
@@ -21,43 +22,54 @@
         <img src="assets/encrypted.svg" alt="">
         <h1>Cifra de Vigenère</h1>
     </div>
-    <div class="area-container">
-        <div class="first">
-            <div class="line-h"></div>
-            <div class="line-v"></div>
-            <div class="line-end-up"></div>
-            <div class="container key">
-                <h2>
-                    Chave
-                </h2>
-                <textarea name="" id=""></textarea>
-            </div>
-            <div class="line-end-down"></div>
-            <div class="line-v"></div>
-            <div class="line-h"></div>
-
-        </div>
-        <div class="second">
-            <div class="slot">
-                <div class="line-end-left"></div>
-                <div class="container menssage">
+    <div class="area">
+        <div class="area-container">
+            <div class="first">
+                <div class="line-h"></div>
+                <div class="line-v"></div>
+                <div class="line-end-up"></div>
+                <div class="container key">
                     <h2>
-                        Mensagem
+                        Chave
                     </h2>
                     <textarea name="" id=""></textarea>
                 </div>
-            </div>
-            <div class="slot">
-                <div class="line-end-left"></div>
-                <div class="container result">
-                    <h2>
-                        Resultado
-                    </h2>
-                    <textarea name="" id=""></textarea>
-                </div>
+                <div class="line-end-down"></div>
+                <div class="line-v"></div>
+                <div class="line-h"></div>
 
             </div>
+            <div class="second">
+                <div class="slot">
+                    <div class="line-end-left"></div>
+                    <div class="container menssage">
+                        <h2>
+                            Mensagem
+                        </h2>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </div>
+
+                <div class="slot">
+                    <div class="line-end-left"></div>
+                    <div class="container result">
+                        <h2>
+                            Resultado
+                        </h2>
+                        <textarea name="" id=""></textarea>
+                    </div>
+
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="area-buttons">
+        <button id="decryption">
+            DESCRIPTOGRAFAR
+        </button>
+        <button id="encryption">
+            CRIPTOGRAFAR
+        </button>
     </div>
     <script src="script.js" async defer></script>
 </body>
