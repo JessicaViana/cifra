@@ -1,6 +1,4 @@
 // Função de Criptografia da Cifra de Vigenère em Javascript:
-let message = "qoesz aruleyc";
-let key = "jasontodd";
 
 function encryption(message, key) {
   key = key.toLowerCase().trim();
@@ -45,8 +43,35 @@ async function decryptionAPI(message, key) {
     options
   )
     .then((res) => res.json())
-    .catch((error) => console.error("Erro:", error))
-    .then(console.log);
+    .catch((error) => console.error("Erro:", error));
+
+  // const decryption = await response.json();
+
+  return response.decrypted_message;
 }
 
-decryptionAPI(message, key);
+//Reatividade da página:
+
+let decryptionButton = document.getElementById("decryption");
+let encryptionButton = document.getElementById("encryption");
+
+async function inputResultText(callback) {
+  let messageText = document.getElementById("message").value;
+  let keyText = document.getElementById("key").value;
+
+  if (!messageText || !keyText) {
+    alert("Mensagem e palavra-chave são obrigatórias!");
+  } else {
+    let resultText = document.getElementById("result");
+    let result = await callback(messageText, keyText);
+    resultText.value = result;
+  }
+}
+
+decryptionButton.onclick = function () {
+  inputResultText(decryptionAPI);
+};
+
+encryptionButton.onclick = function () {
+  inputResultText(encryption);
+};

@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-    font-size: 64rem;
+    font-size: 84rem;
     font-weight: 400;
     margin: 18rem;
 }
@@ -39,7 +39,7 @@ h2 {
     max-width: min-content;
     align-items: start;
     justify-content: start;
-    margin: auto 80rem;
+    margin: auto 70rem;
 }
 
 .area-container {
@@ -71,7 +71,7 @@ h2 {
 .line-h {
     border: 2.25rem dashed white;
     height: 0;
-    width: 180rem;
+    width: 185rem;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -94,7 +94,7 @@ h2 {
 
 button {
     border-radius: 22rem;
-    padding: 13rem 24rem;
+    padding: 16rem 24rem;
     font-family: "Caprasimo", serif;
     color: #fff;
     border: 0;
@@ -155,10 +155,7 @@ button {
     gap: 12rem;
     height: 150rem;
     width: 300rem;
-}
-
-.message {
-    background-color: #818D9F;
+    align-items: center;
 }
 
 .key {
@@ -205,7 +202,6 @@ textarea:focus {
 }
 
 ::selection {
-    /* color: #9724c8; */
     background: #FBF2D2;
     color: var(--color-gray);
     border-radius: 20rem;
